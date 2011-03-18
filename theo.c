@@ -28,6 +28,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "theo.h"
+
 static const char *talk[] = {
 	"Write more code.",
 	"Make more commits.",
@@ -119,7 +121,7 @@ static const char *talk[] = {
 
 static const uint32_t ntalk = sizeof(talk)/sizeof(talk[0]);
 
-const char*
+const char *
 theo_analyze(void)
 {
 	return talk[arc4random_uniform(ntalk)];
