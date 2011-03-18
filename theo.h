@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010 Iwata <iwata@quasiquote.org>
+ * Copyright (c) 2011 Iwata <iwata@quasiquote.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
