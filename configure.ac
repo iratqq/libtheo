@@ -29,7 +29,8 @@ AC_TYPE_UINT32_T
 # Checks for library functions.
 AC_CHECK_FUNCS([arc4random_uniform])
 
-AC_CONFIG_FILES([Makefile
+AC_CONFIG_FILES([theo.pc
+		 Makefile
 		 include/Makefile
 		 lib/Makefile])
 AC_OUTPUT
