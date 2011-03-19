@@ -21,7 +21,7 @@
 extern "C" {
 #endif
 
-const char * theo_analyze(void);
+const char * theo(void);
 
 #ifdef __cplusplus
 }

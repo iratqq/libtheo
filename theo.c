@@ -122,7 +122,7 @@ static const char *talk[] = {
 static const uint32_t ntalk = sizeof(talk)/sizeof(talk[0]);
 
 const char *
-theo_analyze(void)
+theo(void)
 {
 	return talk[arc4random_uniform(ntalk)];
 }
