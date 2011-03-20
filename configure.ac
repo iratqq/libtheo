@@ -30,16 +30,14 @@ AC_TYPE_UINT32_T
 # Checks for library functions.
 AC_CHECK_FUNCS([arc4random_uniform])
 
-AC_ARG_WITH(lua,
-  AC_HELP_STRING([--with-lua],
-                 [with lua binding @<:@default=no@:>@]),
+AC_ARG_ENABLE(lua,
+  AC_HELP_STRING([--enable-lua],
+                 [enable lua binding @<:@default=no@:>@]),
   [
-    if test "x$with_lua" = "xyes"; then
-       PKG_CHECK_MODULES(LUA, lua >= 5.0.0, use_lua="yes", use_lua="no")
-       if test x$use_lua = xyes; then
-          # XXX
-          LUA_CMOD=`pkg-config --define-variable=prefix=${prefix} --variable INSTALL_CMOD lua`
-       fi
+    PKG_CHECK_MODULES(LUA, lua >= 5.0.0, use_lua="yes", use_lua="no")
+    if test x$use_lua = xyes; then
+      # XXX
+      LUA_CMOD=`pkg-config --define-variable=prefix=${prefix} --variable INSTALL_CMOD lua`
     else
        use_lua="no"
     fi
