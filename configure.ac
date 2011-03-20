@@ -60,5 +60,7 @@ AC_CONFIG_FILES([theo.pc
 		 include/Makefile
 		 lib/Makefile
 		 bindings/Makefile
+		 bindings/common-lisp/Makefile
 		 bindings/lua/Makefile])
+
 AC_OUTPUT
