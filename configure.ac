@@ -70,6 +70,7 @@ Configure Result :
 
 AC_CONFIG_FILES([theo.pc
 		 Makefile
+		 admin/Makefile
 		 include/Makefile
 		 lib/Makefile
 		 bindings/Makefile
