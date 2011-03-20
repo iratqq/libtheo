@@ -1,4 +1,5 @@
 AUTOMAKE_OPTIONS = foreign
+ACLOCAL_AMFLAGS = -I admin
 
 SUBDIRS = \
 	include \

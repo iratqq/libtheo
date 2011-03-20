@@ -51,8 +51,22 @@ AC_ARG_WITH(lua,
 AM_CONDITIONAL(BUILDABLE_LUA, test x$use_lua = xyes)
 AC_SUBST(LUA_CMOD)
 
+AC_ARG_ENABLE(erlang,
+  AC_HELP_STRING([--enable-erlang],
+                 [with erlang binding @<:@default=no@:>@]),
+  [
+    AM_WITH_ERLANG
+    use_erlang="yes"
+  ],
+  [
+    use_erlang="no"
+  ])
+
+AM_CONDITIONAL(BUILDABLE_ERLANG, test x$use_erlang = xyes)
+
 AC_MSG_RESULT([
 Configure Result :
+  erlang      : ${use_erlang}
   lua         : ${use_lua}
 ])
 
@@ -63,6 +77,9 @@ AC_CONFIG_FILES([theo.pc
 		 bindings/Makefile
 		 bindings/chicken/Makefile
 		 bindings/common-lisp/Makefile
+		 bindings/erlang/Makefile
+		 bindings/erlang/c_src/Makefile
+		 bindings/erlang/src/Makefile
 		 bindings/lua/Makefile
 		 bindings/python/Makefile
 		 bindings/ruby/Makefile])
