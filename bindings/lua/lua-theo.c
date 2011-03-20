@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010 Iwata <iwata@quasiquote.org>
+ * Copyright (c) 2011 Iwata <iwata@quasiquote.org>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -45,7 +45,7 @@ LUALIB_API int
 luaopen_theo(lua_State *L)
 {
 	luaL_openlib(L, LIBNAME, R, 0);
-	lua_pushliteral(L, "version");           /** version */
+	lua_pushliteral(L, "version");
 	lua_pushliteral(L, LIBVERSION);
 	lua_settable(L, -3);
 	return 1;
