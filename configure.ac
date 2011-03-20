@@ -63,6 +63,7 @@ AC_CONFIG_FILES([theo.pc
 		 bindings/Makefile
 		 bindings/chicken/Makefile
 		 bindings/common-lisp/Makefile
-		 bindings/lua/Makefile])
+		 bindings/lua/Makefile
+		 bindings/python/Makefile])
 
 AC_OUTPUT
