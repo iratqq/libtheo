@@ -29,8 +29,36 @@ AC_TYPE_UINT32_T
 # Checks for library functions.
 AC_CHECK_FUNCS([arc4random_uniform])
 
+AC_ARG_WITH(lua,
+  AC_HELP_STRING([--with-lua],
+                 [with lua binding @<:@default=no@:>@]),
+  [
+    if test "x$with_lua" = "xyes"; then
+       PKG_CHECK_MODULES(LUA, lua >= 5.0.0, use_lua="yes", use_lua="no")
+       if test x$use_lua = xyes; then
+          # XXX
+          LUA_CMOD=`pkg-config --define-variable=prefix=${prefix} --variable INSTALL_CMOD lua`
+       fi
+    else
+       use_lua="no"
+    fi
+  ],
+  [
+    use_lua="no"
+  ])
+
+AM_CONDITIONAL(BUILDABLE_LUA, test x$use_lua = xyes)
+AC_SUBST(LUA_CMOD)
+
+AC_MSG_RESULT([
+Configure Result :
+  lua         : ${use_lua}
+])
+
 AC_CONFIG_FILES([theo.pc
 		 Makefile
 		 include/Makefile
-		 lib/Makefile])
+		 lib/Makefile
+		 bindings/Makefile
+		 bindings/lua/Makefile])
 AC_OUTPUT

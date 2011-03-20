@@ -1,0 +1,4 @@
+SUBDIRS =
+if BUILDABLE_LUA
+SUBDIRS += lua
+endif

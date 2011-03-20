@@ -2,7 +2,8 @@ AUTOMAKE_OPTIONS = foreign
 
 SUBDIRS = \
 	include \
-	lib
+	lib \
+	bindings
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = theo.pc
