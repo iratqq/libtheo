@@ -1,5 +1,0 @@
-(make (("theo.so" ("theo.scm") (run (csc theo.scm -s -O2 -d0 -ltheo)))))
-
-(install-extension
- 'theo
- '("theo.so"))

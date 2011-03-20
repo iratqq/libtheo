@@ -30,25 +30,6 @@ AC_TYPE_UINT32_T
 # Checks for library functions.
 AC_CHECK_FUNCS([arc4random_uniform])
 
-AC_ARG_ENABLE(lua,
-  AC_HELP_STRING([--enable-lua],
-                 [enable lua binding @<:@default=no@:>@]),
-  [
-    PKG_CHECK_MODULES(LUA, lua >= 5.0.0, use_lua="yes", use_lua="no")
-    if test x$use_lua = xyes; then
-      # XXX
-      LUA_CMOD=`pkg-config --define-variable=prefix=${prefix} --variable INSTALL_CMOD lua`
-    else
-       use_lua="no"
-    fi
-  ],
-  [
-    use_lua="no"
-  ])
-
-AM_CONDITIONAL(BUILDABLE_LUA, test x$use_lua = xyes)
-AC_SUBST(LUA_CMOD)
-
 AC_ARG_ENABLE(erlang,
   AC_HELP_STRING([--enable-erlang],
                  [with erlang binding @<:@default=no@:>@]),
@@ -65,7 +46,6 @@ AM_CONDITIONAL(BUILDABLE_ERLANG, test x$use_erlang = xyes)
 AC_MSG_RESULT([
 Configure Result :
   erlang      : ${use_erlang}
-  lua         : ${use_lua}
 ])
 
 AC_CONFIG_FILES([theo.pc
@@ -74,13 +54,9 @@ AC_CONFIG_FILES([theo.pc
 		 include/Makefile
 		 lib/Makefile
 		 bindings/Makefile
-		 bindings/chicken/Makefile
-		 bindings/common-lisp/Makefile
 		 bindings/erlang/Makefile
 		 bindings/erlang/c_src/Makefile
 		 bindings/erlang/src/Makefile
-		 bindings/lua/Makefile
-		 bindings/python/Makefile
-		 bindings/ruby/Makefile])
+		 ])
 
 AC_OUTPUT
