@@ -15,6 +15,7 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
 AC_PROG_RANLIB
+AC_PATH_PROG(TAR, tar)
 
 # Checks for libraries.
 AC_LIBTOOL_WIN32_DLL
@@ -60,6 +61,7 @@ AC_CONFIG_FILES([theo.pc
 		 include/Makefile
 		 lib/Makefile
 		 bindings/Makefile
+		 bindings/chicken/Makefile
 		 bindings/common-lisp/Makefile
 		 bindings/lua/Makefile])
 

@@ -1,5 +1,6 @@
 SUBDIRS =
 
+SUBDIRS += chicken
 SUBDIRS += common-lisp
 
 if BUILDABLE_LUA
